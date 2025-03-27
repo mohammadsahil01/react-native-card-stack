@@ -2,6 +2,10 @@
 
 A customizable React Native component for displaying animated stacks of card groups. Each group scrolls with smooth animations, and within each group, up to 3 cards are stacked with their own animation effects. Ideal for creating visually engaging card-based UIs like wallets, galleries, or dashboards.
 
+![Demo Image](assets/demo.png)
+
+<br><br>
+
 ### Check out the `CardStack` component in action:
 
 [Demo Video](https://www.youtube.com/shorts/y9ets6PTXmY)
