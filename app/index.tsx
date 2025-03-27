@@ -1,35 +1,31 @@
+import CardStack from "@/components/CardStack";
 import React from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 
-import { testData } from "./TestData";
-import CardStack from "@/components/CardStack";
-
 const Base = () => {
-  const [selectedGroup, setSelectedGroup] = React.useState<number | null>(null);
+  const [selectedGroup, setSelectedGroup] = React.useState<string | null>(null);
 
+  // Handler for card press events
   const handleCardPress = (groupIndex: number) => {
-    setSelectedGroup(groupIndex);
-    console.log(`Pressed group at index: ${groupIndex}`);
+    setSelectedGroup(testData[groupIndex][0].city);
+    console.log(
+      `Pressed group at index: ${groupIndex} - ${testData[groupIndex][0].city}`
+    );
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.header}>Card Stack Demo</Text>
-
       {/* Display selected group info */}
       <View style={styles.infoContainer}>
         {selectedGroup !== null ? (
-          <Text style={styles.infoText}>
-            Selected Group: {selectedGroup + 1}
-          </Text>
+          <Text style={styles.infoText}>Selected Group: {selectedGroup}</Text>
         ) : (
           <Text style={styles.placeholderText}>Tap a card group to select</Text>
         )}
       </View>
-
       {/* Spacer before the card stack */}
       <View style={styles.spacer} />
-
       {/* Card Stack Component */}
       <CardStack
         data={testData}
@@ -97,3 +93,31 @@ const styles = StyleSheet.create({
 });
 
 export default Base;
+
+export const testData = [
+  // New York
+  [
+    { city: "New York", sold: 75 },
+    { city: "New York", sold: 60 },
+  ],
+  // Philadelphia
+  [
+    { city: "Philadelphia", sold: 85 },
+    { city: "Philadelphia", sold: 65 },
+  ],
+  // Los Angeles
+  [
+    { city: "Los Angeles", sold: 40 },
+    { city: "Los Angeles", sold: 70 },
+  ],
+  // Chicago
+  [
+    { city: "Chicago", sold: 55 },
+    { city: "Chicago", sold: 45 },
+  ],
+  // Miami
+  [
+    { city: "Miami", sold: 65 },
+    { city: "Miami", sold: 50 },
+  ],
+];
