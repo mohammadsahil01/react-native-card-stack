@@ -130,10 +130,6 @@ Here’s a basic example of how to use CardStack in your React Native app:
 
 ## Props
 
-SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
-
-## Props
-
 | Prop                 | ASCII Type                                                        | ASCII Default                                         | Description                                                                    |
 | -------------------- | ----------------------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------ |
 | `data`               | `T[][]`                                                           | Required                                              | Array of card groups, where each group is an array of card data objects.       |
